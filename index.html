@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animacija</title>
+    <title>Responzivna galerija</title>
     <style>
         * {
             margin: 0;
@@ -12,96 +12,127 @@
         }
 
         body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .gallery-item {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            background-color: #050210;
         }
 
-        .ring-container {
-            position: relative;
-            width: 150px;
-            height: 150px;
+        .image-container {
+            background-color: #007BFF;
+            border-radius: 10px;
+            text-align: center;
         }
 
-        .ring {
+        .image-container img {
             width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            position: absolute;
-            background: linear-gradient(45deg, #fb5dad, #55fb9f, #b97aff);
-            animation: rotateRing 4s linear infinite;
-            filter: blur(5px);
+            border-radius: 10px;
+            background-color: #0056b3;
+            padding: 10px;
+            display: block;
         }
 
-        .ring::before {
-            content: "";
-            position: absolute;
-            width: 120%;
-            height: 120%;
-            top: -10%;
-            left: -10%;
-            background: linear-gradient(45deg, #fb5dad, #55fb9f, #b97aff);
-            border-radius: 50%;
-            filter: blur(20px);
-            opacity: 0.6;
-            z-index: -1;
+        .gallery-item p {
+            margin-top: 5px;
+            color: black;
+            font-weight: bold;
         }
 
-        .mask {
-            width: 85%;
-            height: 85%;
-            background-color: #050210;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            overflow: hidden;
-        }
-
-        .mask::after {
-            content: "";
-            position: absolute;
-            width: 0%;
-            height: 0%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #1E1432;
-            border-radius: 50%;
-            animation: growCircle 1.5s infinite ease-in;
-            opacity: 1;
-        }
-
-        @keyframes rotateRing {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes growCircle {
-            0% {
-                width: 0%;
-                height: 0%;
-                opacity: 1;
-            }
-            100% {
-                width: 80%;
-                height: 80%;
-                opacity: 1;
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div class="ring-container">
-        <div class="ring"></div>
-        <div class="mask"></div>
+    <div class="container">
+        <h2>Gallery Heading</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="placeholder-image.png">
+                </div>
+                <p>Image Title</p>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="placeholder-image.png">
+                </div>
+                <p>Image Title</p>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="placeholder-image.png">
+                </div>
+                <p>Image Title</p>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="placeholder-image.png">
+                </div>
+                <p>Image Title</p>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="placeholder-image.png">
+                </div>
+                <p>Image Title</p>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="placeholder-image.png">
+                </div>
+                <p>Image Title</p>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="placeholder-image.png">
+                </div>
+                <p>Image Title</p>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="placeholder-image.png">
+                </div>
+                <p>Image Title</p>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="placeholder-image.png">
+                </div>
+                <p>Image Title</p>
+            </div>
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="placeholder-image.png">
+                </div>
+                <p>Image Title</p>
+            </div>
+        </div>
+        <p style="margin-top: 20px; text-align: justify;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a lacinia nisl, nec tristique sem. Cras id tellus ac mauris posuere varius. Pellentesque vel mi justo. Aenean malesuada purus eu lacinia finibus. Praesent commodo suscipit odio, eu pharetra nulla dignissim nec. Ut id nulla augue. Duis ultricies ullamcorper purus, ut lobortis tortor semper a. Nam eleifend accumsan elit, in imperdiet lacus. Nunc varius imperdiet nisi, eget pretium augue malesuada a. Nullam ut malesuada enim. Integer non velit fringilla, porta ex vitae, porttitor velit. Ut luctus lacinia libero a scelerisque. Ut ullamcorper arcu at mauris ullamcorper tempor.
+        </p>
     </div>
 </body>
 </html>
